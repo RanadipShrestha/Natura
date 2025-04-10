@@ -1,0 +1,60 @@
+@charset "UTF-8";
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 20px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.register-box{
+	background-color: white;
+	margin: 20px;
+	border-radius: 10px;
+	width:400px;
+	padding: 10px;
+}
+h2{
+	text-align: center;
+}
+label{
+	display: block;
+}
+
+input{
+	border-radius: 10px;
+	width: 80%;
+    max-width: 400px; 
+	padding: 10px;
+
+}
+.row{
+	padding: 10px;
+	display: flex;
+}
+
+.birthday-input{
+	width: 150px;
+}
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #449A44;
+}
+.form-select{
+	border-radius: 10px;
+	width: 80%;
+    max-width: 400px; 
+	padding: 10px;
+}
+
+
