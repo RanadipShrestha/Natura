@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+<link rel="stylesheet" type="text/css" href="/CollegeTutorial/css/footer.css" />
+
 </head>
 <body>
 <footer class="footer">
     <div class="footer-left">
-      <h2>LET’S <br><span class="natura-text">Natura<span class="dot">.</span></span></h2>
+     <img src="/CollegeTutorial/images/let's.png" alt="let's Natura">
     </div>
 
     <div class="footer-center">

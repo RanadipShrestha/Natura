@@ -5,27 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="/CollegeTutorial/css/header.css" />
 </head>
 <body>
 <header class="header">
         <div class="logo">
-          <span class="natura-text">Natura</span><span class="dot">.</span>
+     		<img src="/CollegeTutorial/images/logo.png" alt="Italian Trulli">
         </div>
         <nav class="nav-links">
-          <a href="../HTML/index.html">Home</a>
-          <a href="../HTML/product.html">Product</a>
-          <a href="../HTML/Blog.html">Blog</a>
-          <a href="../HTML/ContactUS.html">Contact Us</a>
-          <a href="../HTML/AboutUs.html">About Us</a>
+          <a href="${pageContext.request.contextPath}/Index">Home</a>
+          <a href="${pageContext.request.contextPath}/product">Product</a>
+          <a href="/CollegeTutorial/pages/blog.jsp">Blog</a>
+          <a href="/CollegeTutorial/pages/contactUs.jsp">Contact Us</a>
+          <a href="/CollegeTutorial/pages/aboutUs.jsp">About Us</a>
         </nav>
         <div class="icons">
           <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search..." />
-            <button class="icon-button" onclick="searchFunction()">🔍</button>
+			<form class="search-container" action="${pageContext.request.contextPath}/product" method="get">
+			  <input type="text" name="search" id="search-input" placeholder="Search..." required />
+			  <button class="icon-button" type="submit">🔍</button>
+			</form>
           </div>
           <button class="icon-button">🛒</button>
         </div>
+        <a href="/CollegeTutorial/Login">
+            <button class="icon-button">Login</button>
+          </a>
+          <a href="/CollegeTutorial/userDashboard">
+            <button class="icon-button">Dashboard</button>
+          </a>
       </header>
 </body>
 </html>

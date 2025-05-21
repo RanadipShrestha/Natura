@@ -5,44 +5,46 @@
 <head>
 <meta charset="UTF-8">
 <title>Register</title>
-<link rel="stylesheet" type="text/css" href="../css/register.css" />
+<link rel="stylesheet" type="text/css" href="/CollegeTutorial/css/register.css" />
 </head>
-<body style="background-color:purple;">
-
-<%
-    String error = request.getParameter("error");
-    if (error != null) {
-%>
-    <div style="color: white; background-color: red; padding: 10px; margin: 10px; border-radius: 5px;">
-        <% if (error.equals("name")) { %>
-            Invalid Name.
-        <% } else if (error.equals("username")) { %>
-            Invalid Username.
-        <% } else if (error.equals("DOB")) { %>
-            Invalid Date of Birth.
-        <% } else if (error.equals("gender")) { %>
-            Invalid Gender.
-        <% } else if (error.equals("email")) { %>
-            Invalid Email.
-        <% } else if (error.equals("phone")) { %>
-            Invalid Phone Number.
-        <% } else if (error.equals("password1")) { %>
-            Invalid Password (must be strong).
-        <% } else if (error.equals("password2")) { %>
-            Invalid Retyped Password.
-        <% } else if (error.equals("notMatchingPasswords")) { %>
-            Password and Retyped Password do not match!
-        <% } else if (error.equals("insertFail")) { %>
-            Registration failed. Please try again.
-        <% } else if (error.equals("sql")) { %>
-            Server error. Please try again later.
-        <% } %>
-    </div>
-<% } %>
+<body>
 
 <div class="register-box">
     <h2>Register Form</h2>
+
+    <% 
+        String error = request.getParameter("error"); 
+        if (error != null) { 
+    %>
+        <div style="color: white; background-color: red; padding: 10px; margin: 10px 0; border-radius: 5px; text-align: center;">
+            <% if (error.equals("name")) { %>
+                Invalid Name.
+            <% } else if (error.equals("username")) { %>
+                Invalid Username.
+            <% } else if (error.equals("DOB")) { %>
+                Invalid Date of Birth.
+            <% } else if (error.equals("gender")) { %>
+                Invalid Gender.
+            <% } else if (error.equals("email")) { %>
+                Invalid Email.
+            <% } else if (error.equals("phone")) { %>
+                Invalid Phone Number.
+            <% } else if (error.equals("password1")) { %>
+                Password must be strong.
+            <% } else if (error.equals("password2")) { %>
+                Invalid Retyped Password.
+            <% } else if (error.equals("passwordMismatch")) { %>
+                Password and Retyped Password do not match!
+            <% } else if (error.equals("insertFail")) { %>
+                Registration failed. Please try again.
+            <% } else if (error.equals("userNameExists")) { %>
+                Username is already used by someone else.
+            <% } %>
+        </div>
+    <% } %>
+
     <form action="${pageContext.request.contextPath}/register" method="POST">
+    <input type="hidden" value="">
         <div class="row">
             <div class="col">
                 <label for="fname">First Name:</label> 
@@ -93,6 +95,8 @@
             <button type="submit" class="register-button">Submit</button>
         </div>
     </form>
+    <p>Have an account? <a href="${pageContext.request.contextPath}/Login">Login</a></p>
 </div>
+
 </body>
 </html>

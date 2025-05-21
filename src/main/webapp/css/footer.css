@@ -1,16 +1,15 @@
 @charset "UTF-8";
 
-/* Footer */
 .footer-center {
   display: flex;
-  justify-content: space-between; /* Spread sections evenly */
-  align-items: flex-start;         /* Align all sections to top */
+  justify-content: space-between; 
+  align-items: flex-start;         
   margin-top: 20px;
 }
 
 .footer-section {
-  flex: 1;                        /* All sections same width */
-  padding: 0 20px;                /* Space between sections */
+  flex: 1;                       
+  padding: 0 20px;                
 }
 
 .footer-left {
