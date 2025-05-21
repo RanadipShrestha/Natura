@@ -1,5 +1,4 @@
-package controller;
-
+package utility;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -11,11 +10,11 @@ import java.nio.charset.StandardCharsets;
 import java.security.spec.KeySpec;
 import java.util.Base64;
 
-public class EncryptAndDecrypt {
+public class EncryptDecrypt {
 	private static final String SECRET_KEY = "my_super_secret_key";
 	private static final String SALT = "ssshhhhhhhhhhh!!!!";
 
-	public String encrypt(String strToEncrypt) {
+	public static String encrypt(String strToEncrypt) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -34,7 +33,7 @@ public class EncryptAndDecrypt {
 		return null;
 	}
 
-	public String decrypt(String input) {
+	public static String decrypt(String input) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -51,13 +50,5 @@ public class EncryptAndDecrypt {
 			System.out.println("Error while decrypting: " + e.toString());
 		}
 		return null;
-	}
-	
-	public static void main(String[] args) {
-		EncryptAndDecrypt ed = new EncryptAndDecrypt();
-//		String encryptedText = ed.encrypt("ICP@@#123");
-		String decryptedText = ed.decrypt("QvU8FJFpdtLhih92jAUcmQ==");
-		
-		System.out.println(decryptedText);
 	}
 }

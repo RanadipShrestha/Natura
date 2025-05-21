@@ -3,6 +3,7 @@ package models;
 import java.time.LocalDateTime;
 
 public class RegisterModel {
+	private Integer user_id;
 	private String fname;
 	private String lname;
 	private String username;
@@ -13,11 +14,12 @@ public class RegisterModel {
 	private String password2;
 	private boolean is_admin;
 	private LocalDateTime User_create_date;
-	private LocalDateTime User_accound_update;
-	public RegisterModel(String fname, String lname, String username, String birthday, String gender, String email,
-			String phonenumber, String password2, boolean is_admin, LocalDateTime user_create_date,
-			LocalDateTime user_accound_update) {
+	private LocalDateTime User_account_update;
+	public RegisterModel(Integer user_id, String fname, String lname, String username, String birthday, String gender,
+			String email, String phonenumber, String password2, boolean is_admin, LocalDateTime user_create_date,
+			LocalDateTime user_account_update) {
 		super();
+		this.user_id = user_id;
 		this.fname = fname;
 		this.lname = lname;
 		this.username = username;
@@ -28,7 +30,13 @@ public class RegisterModel {
 		this.password2 = password2;
 		this.is_admin = is_admin;
 		User_create_date = user_create_date;
-		User_accound_update = user_accound_update;
+		User_account_update = user_account_update;
+	}
+	public Integer getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
 	}
 	public String getFname() {
 		return fname;
@@ -90,10 +98,10 @@ public class RegisterModel {
 	public void setUser_create_date(LocalDateTime user_create_date) {
 		User_create_date = user_create_date;
 	}
-	public LocalDateTime getUser_accound_update() {
-		return User_accound_update;
+	public LocalDateTime getUser_account_update() {
+		return User_account_update;
 	}
-	public void setUser_accound_update(LocalDateTime user_accound_update) {
-		User_accound_update = user_accound_update;
+	public void setUser_account_update(LocalDateTime user_account_update) {
+		User_account_update = user_account_update;
 	}
 }
