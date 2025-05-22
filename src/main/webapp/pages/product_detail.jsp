@@ -30,7 +30,7 @@
     <div class="container">
         <div class="left-section">
             <img src="<%= request.getContextPath() + "/" + product.getImage() %>" alt="Product Image" class="product-image">
-            <p>Image Path: <%= product.getImage() %></p>
+            
         </div>
 
         <div class="right-section">
@@ -64,13 +64,6 @@
                 <%
                     }
                 %>
-
-                <!-- Buy Now Form -->
-                <form action="buyNowServlet" method="post" onsubmit="syncQuantityToForm('buyFormQuantity')">
-                    <input type="hidden" name="productId" value="<%= product.getProduct_id() %>">
-                    <input type="hidden" id="buyFormQuantity" name="quantity" value="1">
-                    <button type="submit" class="action-btn buy-now">Buy Now</button>
-                </form>
             </div>
 
             <!-- Key Features Section -->
